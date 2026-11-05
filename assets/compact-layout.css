@@ -1,0 +1,44 @@
+/* Compact vertical rhythm: keep content readable without oversized gaps. */
+.section,#services,#approach,#match,#booking,#reviews{padding-block:42px}
+.hero.wrap{min-height:580px;padding-top:155px;padding-bottom:100px}
+.hero .lead{margin:18px auto 22px}.hero-note{margin-top:18px}
+.quick-book{padding:22px 28px;margin-top:-40px}.quick-book h2{margin-bottom:18px}
+.ticker{margin-top:26px;padding-block:14px}
+.section-heading,#services .section-heading,#approach .section-heading,#reviews .section-heading{margin-bottom:24px;gap:24px}
+#services .eyebrow,#approach .eyebrow,#match .eyebrow{margin-bottom:14px}
+#services .card-body{padding:20px}#services .card-body p{min-height:0;margin-top:12px}
+#services .chips{margin:14px 0 16px}#services>.fine{margin-top:18px;padding:10px 14px}
+#approach .steps{margin-top:24px}#approach .steps article{padding:20px}
+#approach .steps h3{margin-top:16px}.process-outcome{margin-top:18px;padding:14px 18px}
+#match{gap:32px}#match .match-box{padding:22px}#match .recommend{margin-top:16px;padding:18px}
+.public-review-overview{padding:22px;gap:22px;margin-bottom:22px}
+#reviews .review-card,#reviews .write-review{padding:20px}
+footer{padding-block:28px}
+.dashboard-header{height:72px}.dashboard-content{padding:24px 30px 0}
+.welcome{margin-bottom:20px}.welcome .eyebrow{margin-bottom:8px}
+.staff-hero{min-height:0;margin-bottom:18px;align-items:stretch}
+.staff-hero-copy{padding:24px}.staff-hero>img{height:230px;min-height:100%;max-height:280px}
+.staff-hero .eyebrow{margin-bottom:10px}.staff-hero-actions{margin-top:16px}
+.staff-quick-actions{margin-bottom:18px}.staff-stats{gap:12px;margin-bottom:18px}
+.staff-stats>a{padding:16px}.staff-stats strong{margin:8px 0;font-size:32px}
+.operations-note{margin:18px 0;padding:20px}.panel{padding:22px}
+.staff-filters{margin:18px 0;padding:14px;gap:10px}
+.table-scroll th,.table-scroll td{padding:12px 10px}
+.staff-editor{margin-top:18px}.staff-editor label{margin-bottom:14px}
+.staff-member{padding:15px;margin-top:10px}.team-list{margin-top:18px}
+.review-admin-banner{padding:22px;margin-bottom:18px;gap:16px}
+.review-admin-stats{gap:12px;margin-bottom:18px}.review-admin-stats article{padding:18px;gap:8px}
+.dashboard-hero{min-height:210px}.appointments-panel{margin-top:18px}
+.appointment-list{gap:12px;margin-top:16px}.appointment-item{padding:17px}
+.dashboard-footer{padding-block:22px}
+@media(max-width:640px){
+.section,#services,#approach,#match,#booking,#reviews{padding-block:30px}
+.hero.wrap{min-height:0;padding:135px 6% 85px}
+.quick-book{padding:20px;margin-top:-32px}.ticker{margin-top:22px}
+#services .service-grid{gap:18px}#approach .steps{margin-top:20px}
+#match{gap:22px}.dashboard-content{padding:20px 16px 0}
+.dashboard-header{padding-inline:16px}.panel{padding:18px}
+.staff-hero-copy{padding:22px}.staff-hero>img{height:140px;min-height:0}
+.staff-stats>a{padding:14px}.staff-stats strong{font-size:29px}
+.public-review-overview{padding:20px;gap:20px}
+}

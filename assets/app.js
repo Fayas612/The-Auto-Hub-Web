@@ -1,0 +1,12 @@
+const descriptions={windscreen:['Windscreen Polishing','Start with a glass assessment to explore polishing for water spots and surface haze.'],nano:['Nano coating','Explore a water-repellent treatment that helps make routine cleaning easier.'],headlights:['Headlight polishing','Start with an assessment of your lenses to address dullness and surface oxidation.']};
+document.querySelector('#priority').addEventListener('change',e=>{const key=e.target.value;document.querySelector('#recommend-title').textContent=descriptions[key][0];document.querySelector('#recommend-copy').textContent=descriptions[key][1];document.querySelector('#recommend-link').dataset.service=key;});
+document.addEventListener('click',e=>{const a=e.target.closest('[data-service]');if(a)document.querySelector('#service').value=a.dataset.service;});
+document.querySelector('#booking-form').addEventListener('submit',async e=>{e.preventDefault();const form=e.target;const button=form.querySelector('button');const status=document.querySelector('#form-status');button.disabled=true;status.textContent='Sending your request…';try{const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});const data=await response.json();if(!response.ok)throw new Error(data.error||'Please reload and try again.');status.textContent=`${data.message} Reference #${data.reference}.`;form.reset();if(data.account_url==="account.php#appointments"){const link=document.createElement("a");link.href=data.account_url;link.textContent=" View my appointments ↗";link.style.textDecoration="underline";status.appendChild(link);}}catch(error){status.textContent=error.message==='Failed to fetch'?'Connection failed. Please try again.':error.message;}finally{button.disabled=false;}});
+document.querySelector('#quick-book-form')?.addEventListener('submit',e=>{e.preventDefault();document.querySelector('#service').value=document.querySelector('#quick-service').value;document.querySelector('[name="vehicle"]').value=document.querySelector('#quick-vehicle').value;document.querySelector('[name="preferred_date"]').value=document.querySelector('#quick-date').value;document.querySelector('#booking').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});history.replaceState(null,'','#booking');});
+const requestedService = new URLSearchParams(location.search).get('service');
+if (requestedService && Object.hasOwn(descriptions, requestedService)) {
+  document.querySelector('#service').value = requestedService;
+}
+
+
+
